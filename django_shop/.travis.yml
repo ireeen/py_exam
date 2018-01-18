@@ -1,0 +1,17 @@
+language: python
+
+python:
+  - 3.6
+
+install:
+  - pip install 'django==1.11.8'
+  - pip install pytest pytest-django pytest-cov
+  - pip install djangorestframework
+  - pip install djangorestframework-jwt
+
+script:
+  - pytest
+
+after_success:
+  - pip install coveralls
+  - coveralls
